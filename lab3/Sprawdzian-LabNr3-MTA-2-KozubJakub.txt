@@ -1,0 +1,12 @@
+-- Ad 2.
+SELECT ProductName, CategoryName 
+	FROM products p JOIN categories c ON p.CategoryID=c.CategoryID
+	WHERE SupplierID =
+		(SELECT SupplierID FROM suppliers 
+		WHERE CompanyName='Leka Trading')
+	ORDER BY ProductName ASC;
+
+-- Ad 3.	
+SELECT OrderID, FirstName, LastName
+	FROM orders o JOIN employees e ON o.EmployeeID=e.EmployeeID
+	WHERE ShippedDate>DATE '1997-10-24';
