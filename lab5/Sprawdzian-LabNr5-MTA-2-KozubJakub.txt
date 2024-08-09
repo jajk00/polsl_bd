@@ -1,0 +1,10 @@
+-- Ad 2.
+CREATE USER 'adam'@'localhost';
+-- Ad 3.
+RENAME USER 'adam'@'localhost' TO 'jacek'@'localhost';
+-- Ad 4.
+SET PASSWORD FOR 'jacek'@'localhost' = PASSWORD('Abcd1234');
+-- Ad 5.
+GRANT ALL PRIVILEGES ON northwind.products TO 'jacek'@'localhost';
+-- Ad 6.
+DROP USER 'jacek'@'localhost';
