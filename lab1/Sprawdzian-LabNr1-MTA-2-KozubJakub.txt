@@ -1,0 +1,7 @@
+SELECT ProductID AS "Identyfikator produktu", ProductName, SupplierID, CategoryID
+	FROM products;
+	
+SELECT * FROM products 
+	WHERE SupplierID!=8 AND SupplierID!=16 AND SupplierID!=18 AND ProductName LIKE '%co%';
+
+SELECT * FROM products ORDER BY CategoryID ASC;
