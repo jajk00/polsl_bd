@@ -1,0 +1,47 @@
+SELECT ProductName, UnitPrice FROM products 
+	WHERE UnitPrice>=5 AND UnitPrice<=25
+	ORDER BY UnitPrice DESC;
+	
+SELECT ProductName, UnitPrice*3.81 AS PLN FROM products 
+	WHERE SUBSTR(ProductName,1,1)='S';
+	
+SELECT MIN(UnitPrice), MAX(UnitPrice), AVG(UnitPrice) FROM products 
+	GROUP BY CategoryID ORDER BY MIN(UnitPrice) ASC;
+	
+SELECT LENGTH(ProductName), CONCAT(
+	LOWER(LEFT(ProductName,1)), 
+	SUBSTR(ProductName,2)) FROM products;
+	
+SELECT OrderDate, COUNT(*), DATEDIFF(CURRENT_TIMESTAMP, OrderDate)
+	FROM orders HAVING COUNT(*)=10;
+	
+SELECT min(UnitPrice)*3.81, MAX(UnitPrice)*3.81 
+	FROM products GROUP BY CategoryID;
+
+
+
+
+
+SELECT ProductName, UnitPrice FROM products 
+	WHERE UnitPrice>=5 AND UnitPrice<=25
+	ORDER BY UnitPrice DESC;
+	
+SELECT ProductName, UnitPrice*3.81 AS PLN FROM products 
+	WHERE SUBSTR(ProductName,1,1)='S';
+	
+SELECT MIN(UnitPrice), MAX(UnitPrice), AVG(UnitPrice) FROM products 
+	GROUP BY CategoryID ORDER BY MIN(UnitPrice) ASC;
+	
+SELECT LENGTH(ProductName), CONCAT(
+	LOWER(LEFT(ProductName,1)), 
+	Upper(SUBSTR(ProductName,2,(LENGTH(ProductName)-2))),
+	LOWER(RIGHT(ProductName,1))
+	) FROM products;
+	
+SELECT OrderDate, DATEDIFF(CURRENT_TIMESTAMP, OrderDate)
+	FROM orders
+	ORDER BY OrderDate DESC
+	LIMIT 10;
+	
+SELECT CategoryID, min(UnitPrice)*3.81, MAX(UnitPrice)*3.81 
+	FROM products GROUP BY CategoryID;
